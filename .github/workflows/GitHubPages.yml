@@ -3,11 +3,11 @@ name: GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.73.0'
+          hugo-version: '0.111.3'
           extended: true
 
       - name: Build
@@ -28,7 +28,7 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./public
-          publish_branch: master  # deploying branch
-          cname: academic-pages-demo.lakemper.eu
+          publish_branch: main  # deploying branch
+          cname: jianghefeifei
           allow_empty_commit: true
-          external_repository: sloede/academic-pages-demo
+          external_repository: MFEI-0825/jianghefeifei

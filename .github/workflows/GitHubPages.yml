@@ -3,11 +3,11 @@ name: GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
@@ -28,7 +28,7 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./public
-          publish_branch: main  # deploying branch
+          publish_branch: master  # deploying branch
           cname: mfei-0825.github.io/jianghefeifei
           allow_empty_commit: true
           external_repository: MFEI-0825/jianghefeifei
